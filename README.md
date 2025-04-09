@@ -1,18 +1,16 @@
 ```Bash
- ___       __   ________  _______   ________   ___  ___  _____ ______      
-|\  \     |\  \|\   __  \|\  ___ \ |\   ___  \|\  \|\  \|\   _ \  _   \    
-\ \  \    \ \  \ \  \|\  \ \   __/|\ \  \\ \  \ \  \\\  \ \  \\\__\ \  \   
- \ \  \  __\ \  \ \   ____\ \  \_|/_\ \  \\ \  \ \  \\\  \ \  \\|__| \  \  
-  \ \  \|\__\_\  \ \  \___|\ \  \_|\ \ \  \\ \  \ \  \\\  \ \  \    \ \  \ 
-   \ \____________\ \__\    \ \_______\ \__\\ \__\ \_______\ \__\    \ \__\
-    \|____________|\|__|     \|_______|\|__| \|__|\|_______|\|__|     \|__|
-                                                                                                                      
-                                                                           
-                    ----- WordPress Enumeration Tool -----
+          ___       __   ________  _______   ________   ___  ___  _____ ______      
+         |\  \     |\  \|\   __  \|\  ___ \ |\   ___  \|\  \|\  \|\   _ \  _   \    
+         \ \  \    \ \  \ \  \|\  \ \   __/|\ \  \\ \  \ \  \\\  \ \  \\\__\ \  \   
+          \ \  \  __\ \  \ \   ____\ \  \_|/_\ \  \\ \  \ \  \\\  \ \  \\|__| \  \  
+           \ \  \|\__\_\  \ \  \___|\ \  \_|\ \ \  \\ \  \ \  \\\  \ \  \    \ \  \ 
+            \ \____________\ \__\    \ \_______\ \__\\ \__\ \_______\ \__\    \ \__\
+             \|____________|\|__|     \|_______|\|__| \|__|\|_______|\|__|     \|__|
+
+                              ----- WordPress Enumeration Tool -----
 
 
 ```
-
 
 **WpEnum** is a simple and efficient CLI tool designed for enumerating WordPress installations. It automates the process of gathering useful information about a target WordPress site, including its version, users, plugins, themes, and more. Perfect for penetration testing and security assessments.
 
@@ -49,4 +47,4 @@
 ---
 
 ## Example Output
-
+//to do.

@@ -57,7 +57,32 @@ done
 
 # Check for readme.html (sometimes reveals WP version)
 echo -e "\n${CYAN}[*] Checking for readme.html:${RESET}"
-curl -s "$DOMAIN/readme.html" | grep --color=always -i "wordpress" | head -n 5
+
+README=$(curl -o /dev/null -s -w "%{http_code}\n" "$DOMAIN/README.html")
+
+if [ "$README" != "200" ]; then
+    echo -e "${RED}[-] Readme file not found."
+elif [ "$README" == "200" ]; then
+    echo -e "${GREEN}[+] License file founded => $README/license.txt ${RESET}"
+fi
+
+# Check for license.txt (sometimes reveals WP version)
+echo -e "\n${CYAN}[*] Checking for license.txt:${RESET}"
+LICENSE=$(curl -o /dev/null -s -w "%{http_code}\n" "$DOMAIN/license.txt")
+
+if [ "$LICENSE" != "200" ]; then
+    echo -e "${RED}[-] License file not found."
+elif [ "$LICENSE" == "200" ]; then
+    echo -e "${GREEN}[+] License file founded => $DOMAIN/license.txt ${RESET}"
+fi
+
+#checking for user list
+echo -e "\n${CYAN} Checking for users : ${RESET}"
+curl $DOMAIN/wp-json/wp/v2/users
+
+echo -e "\n"
+
+
 
 # End of enumeration
 echo -e "\n${GREEN}[✓] Enumeration complete.${RESET}"

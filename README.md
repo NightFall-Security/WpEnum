@@ -12,20 +12,23 @@
 
 ```
 
-**WpEnum** is a simple and efficient CLI tool designed for enumerating WordPress installations. It automates the process of gathering useful information about a target WordPress site, including its version, users, plugins, themes, and more. Perfect for penetration testing and security assessments.
+**WpEnum** is a base repo containing scripts & tricks for WP enumeration. It automates the process of gathering useful information about a target WordPress site, including its version, users, plugins, themes, and more. Perfect for penetration testing and security assessments.
 
 ---
 
-## Features
+## Base scan features
 
 - **WordPress Version Detection**: Extracts the version of WordPress from `<meta name="generator">` and other sources.
 - **User Enumeration**: Attempts to find WordPress users via the `/author/` URL parameter.
 - **Plugin & Theme Detection**: Scans the site for common WordPress plugin and theme names by analyzing the HTML.
 - **Readme Check**: Looks for a `readme.html` file which may contain the WordPress version.
+- **License Check**: Looks for a `license.txt` file which may contain the WordPress version.
+
+- **More informations for a plugin :** => Consider using `plugin-version.sh`
 
 ---
 
-## Usage
+### Running it
 
 **Run the script by following these simple steps:**
 
@@ -33,18 +36,33 @@
 2. Make the script executable:
 
     ```bash
-    chmod +x wp-enum.sh
+    chmod +x scan.sh
     ```
 
 3. Execute the script with:
 
     ```bash
-    ./wp-enum.sh
+    ./scan.sh
     ```
 
 4. Enter the domain of the WordPress site you'd like to enumerate when prompted.
 
 ---
 
-## Example Output
-//to do.
+## WPScan
+
+Base notes about WPScan. WPScan is powerfull wordpress vulnerability scanner. Consider using it for more efficienty.
+
+**More informations ?**
+
+<a href="https://github.com/wpscanteam/wpscan" target="blank">WPScan</a>
+
+### Installation : 
+
+`sudo apt-get update`
+
+`sudo gem install wpscan`
+
+Once the installation completes, you can issue a command such as wpscan --hh` to verify the installation. This command will show you the usage menu with all of the available command-line switches.
+
+for more details : => consider consulting `wpscan.sh`

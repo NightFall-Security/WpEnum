@@ -65,7 +65,7 @@ Base notes about WPScan. WPScan is powerfull wordpress vulnerability scanner. Co
 
 `sudo gem install wpscan`
 
-Once the installation completes, you can issue a command such as wpscan --hh` to verify the installation. This command will show you the usage menu with all of the available command-line switches.
+Once the installation completes, you can issue a command such as `wpscan --hh` to verify the installation. This command will show you the usage menu with all of the available command-line switches.
 
 for more details : => consider consulting `wpscan official repo`
 
@@ -75,4 +75,10 @@ for more details : => consider consulting `wpscan official repo`
 
 **base scan** : `wpscan --url <url> --enumerate`
 
-**user brute-forcing** : (after retrieving user list) => `wpscan --password-attack xmlrpc -t 20 -U <user> -P <path_to_wordlist> --url http://83.136.252.66:50942`
+>[!Warning]
+>Consider getting an access token for more options & deeper scans.
+
+**user brute-forcing** : (after retrieving user list) => `wpscan --password-attack xmlrpc -t 20 -U <user> -P <path_to_wordlist> --url http://83.136.252.66:50942` 
+
+>[!Important]
+>be carefull using this method i recommend using other techniques instead of trying brute force request who may causing being flagged) => this was used during my HTB wordpress chapter so i put it here. 

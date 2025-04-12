@@ -69,7 +69,7 @@ Once the installation completes, you can issue a command such as `wpscan --hh` t
 
 for more details : => consider consulting `wpscan official repo`
 
-`wp-enum.sh` use a simple recon & enumeration scan.
+`wp-enum.sh` use a simple recon & enumeration scan. `wp-enum-vp` use a simple recon + vulnerable plugins => do not forget to update to file & set your API_TOKEN
 
 ### Other possibilities : 
 

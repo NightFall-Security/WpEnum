@@ -67,18 +67,45 @@ Base notes about WPScan. WPScan is powerfull wordpress vulnerability scanner. Co
 
 Once the installation completes, you can issue a command such as `wpscan --hh` to verify the installation. This command will show you the usage menu with all of the available command-line switches.
 
-for more details : => consider consulting `wpscan official repo`
-
-`wp-enum.sh` use a simple recon & enumeration scan. `wp-enum-vp` use a simple recon + vulnerable plugins => do not forget to update to file & set your API_TOKEN
-
-### Other possibilities : 
-
-**base scan** : `wpscan --url <url> --enumerate`
+for more details : consider consulting `wpscan official repo` at <a href="https://github.com/wpscanteam/wpscan/blob/master/README.md" target="blank">official README</a>
 
 >[!Warning]
 >Consider getting an access token for more options & deeper scans.
 
-**user brute-forcing** : (after retrieving user list) => `wpscan --password-attack xmlrpc -t 20 -U <user> -P <path_to_wordlist> --url http://83.136.252.66:50942` 
+`wp-enum.sh` use a simple recon & enumeration scan. `wp-enum-vp` use a simple recon + vulnerable plugins => do not forget to update the file & set your API_TOKEN
+
+
+**Where can I grab my API token ?** 
+
+Juste create an account on WpScan & you'll get your API TOKEN <a href="https://wpscan.com/register/" target="blank">Create my account</a>
+
+### Cheatsheet :
+
+```Bash
+
+basic :
+wpscan --url http://example.com --enumerate
+
+verbose :
+wpscan --url http://example.com --verbose
+
+enum plugins :
+wpscan --url http://example.com --enumerate p
+
+enum users :
+wpscan --url http://example.com --enumerate u
+
+enum themes :
+wpscan --url http://example.com --enumerate t
+
+plugins vulns :
+wpscan --url http://example.com --plugins-detection aggressive --enumerate p
+
+wpscan --url http://example.com --enumerate vp
+``` 
+
+**user brute-forcing**  (after retrieving user list)
+`wpscan --password-attack xmlrpc -t 20 -U <user> -P <path_to_wordlist> --url http://83.136.252.66:50942` 
 
 >[!Important]
 >be carefull using this method i recommend using other techniques instead of trying brute force request who may causing being flagged) => this was used during my HTB wordpress chapter so i put it here. 

@@ -50,6 +50,10 @@ curl -s "$DOMAIN" | grep --color=always -Eo "wp-content/(plugins|themes)/[a-zA-Z
     echo -e "${GREEN}[+] Found: $line${RESET}"
 done
 
+curl -s -X GET "$DOMAIN" | sed 's/href=/\n/g' | sed 's/src=/\n/g' | grep --color=always 'themes' | cut -d"'" -f2 | sort -u | while read line; do
+    echo -e "${GREEN}[+] Found theme asset: $line${RESET}"
+done
+
 echo -e "\n"
 curl -s -X GET $DOMAIN | sed 's/href=/\n/g' | sed 's/src=/\n/g' | grep --color=always 'wp-content/plugins/*' | cut -d"'" -f2 | sort -u | while read line; do 
     echo -e "${GREEN}[+] Found : $line${RESET}"

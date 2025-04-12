@@ -100,12 +100,13 @@ wpscan --url http://example.com --enumerate t
 
 plugins vulns :
 wpscan --url http://example.com --plugins-detection aggressive --enumerate p
-
 wpscan --url http://example.com --enumerate vp
-``` 
 
-**user brute-forcing**  (after retrieving user list)
-`wpscan --password-attack xmlrpc -t 20 -U <user> -P <path_to_wordlist> --url http://83.136.252.66:50942` 
+user password brute forcing :
+wpscan --password-attack xmlrpc -t 20 -U <user> -P <path_to_wordlist> --url http://83.136.252.66:50942
+```
+
+**do not forget to add your api token with :** `--api-token YOUR_API_TOKEN`
 
 >[!Important]
->be carefull using this method i recommend using other techniques instead of trying brute force request who may causing being flagged) => this was used during my HTB wordpress chapter so i put it here. 
+>be carefull using brute force method. I recommend using other techniques instead of trying brute force request who may causing being flagged => this was used during my HTB wordpress chapter so i put it here. 
